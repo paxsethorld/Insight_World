@@ -69,11 +69,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             // This must come before default plugin.
             width: 800.,
             height: 800.,
-            title: "Insight".to_owned(),
+            title: "InsightWorld".to_owned(),
             ..Default::default()
         })
         .add_plugins(DefaultPlugins)
         .add_plugins(DefaultPickingPlugins)
+        .add_plugin(bevy_transform_gizmo::TransformGizmoPlugin::default())
         .add_plugin(DollyCursorGrab)
         .add_plugin(RapierPhysicsPlugin::<NoUserData>::default())
         .add_plugin(RapierDebugRenderPlugin::default());
